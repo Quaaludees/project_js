@@ -1,6 +1,6 @@
 
 const objQuery = {
-    search: 'Vasa',
+    search: 'Дуд мломвщ',
     take: 10,
 }
 
@@ -13,7 +13,7 @@ function changeObjToString (objQuery) {
         return '';
     }
     return Object.entries(objQuery).map(el => {
-        return el.join('=')
+        return `${el[0]}=${encodeURIComponent(el[1])}`
     }).join('&');
 }
 changeObjToString()

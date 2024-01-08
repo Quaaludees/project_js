@@ -1,3 +1,5 @@
+const createId  = (hash = 'id') => hash + Math.random().toString(32).slice(8);
+
 const toDoList  = {
     todos: [],
     addTask: function (task) {
@@ -6,14 +8,7 @@ const toDoList  = {
     removeTask: function (id) {
         this.todos = this.todos.filter(el => el.id !== id);
     },
-    updateName: function (tittle, id) {
-        const indToDo = this.todos.findIndex(el => el.id === id);
-        if (indToDo < 0) {
-            return;
-        }
-        this.todos[indToDo].tittle = tittle;
-    },
-    updateName2: function (newTittle, id) {
+    updateName: function (newTittle, id) {
 
         this.todos = this.todos.map(el => {
             if (el.id === id) {
@@ -29,25 +24,25 @@ const toDoList  = {
         this.todos.sort((a, b) => b.priority - a.priority)
     }
 }
+const mockId1 = createId()
 toDoList.addTask({
-    id: 1,
+    id: mockId1,
     tittle: 'Posuda',
     priority: 2,
 });
 toDoList.addTask({
-    id: 2,
+    id: createId(),
     tittle: 'kuhnua',
     priority: 4,
 });
 toDoList.addTask({
-    id: 3,
+    id: createId(),
     tittle: 'venik',
     priority: 7,
 });
 
-toDoList.removeTask(1);
+toDoList.removeTask(mockId1);
 toDoList.updateName('tuvalet', 11);
-toDoList.updateName2('tuvalet', 26);
 console.log(toDoList);
 toDoList.sortPriority();
 console.log(toDoList);
