@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>calc</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+<section class="box">
+    <div class="">
+        <label>
+            <input type="number" class="num1 label">
+        </label>
+    </div>
+    <div class="operations">
+        <button class="plus op_button" onclick="operation='+'">+</button>
+        <button class="minus op_button" onclick="operation='-'">-</button>
+        <button class="multiplication op_button" onclick="operation='*'">*</button>
+        <button class="division op_button" onclick="operation='/'">/</button>
+    </div>
+    <div>
+        <label>
+            <input type="number" class="num2 label">
+        </label>
+    </div>
+    <div class="res">
+        <button class="button_res" onclick="calc()">
+            Посчитать!
+        </button>
+        <div class="result label">
+
+        </div>
+    </div>
+
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>
+
